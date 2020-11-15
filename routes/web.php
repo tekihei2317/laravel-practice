@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 // return view('welcome');
 // });
 
-Route::get('/', 'ArticleController@index');
+Route::get('/', 'App\Http\Controllers\ArticleController@index');
