@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="container">
+  @include('nav')
   @foreach($articles as $article)
   <div class="card mt-3">
     <div class="card-body d-flex flex-row">
