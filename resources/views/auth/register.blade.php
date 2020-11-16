@@ -10,7 +10,7 @@
             <div class="card mt-3">
                 <div class="card-body text-center">
                     <h2 class="h3 card-title text-center mt-2">ユーザー登録</h2>
-
+                    @include('error_card_list')
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="md-form">
@@ -38,11 +38,9 @@
                     <div class="mt-0">
                         <a href="{{ route('login') }}" class="card-text">ログインはこちら</a>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 @endsection
