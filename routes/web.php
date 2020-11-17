@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', 'App\Http\Controllers\ArticleController@index')->name('articles.index');
-Route::resource('/articles', 'App\Http\Controllers\ArticleController')->except(['index']);
+Route::resource('/articles', 'App\Http\Controllers\ArticleController')->except(['index'])->middleware('auth');
