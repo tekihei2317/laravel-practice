@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 // return view('welcome');
 // });
 
-Route::get('/', 'App\Http\Controllers\ArticleController@index');
-
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', 'App\Http\Controllers\ArticleController@index')->name('articles.index');
+Route::resource('/articles', 'App\Http\Controllers\ArticleController')->except(['index']);
