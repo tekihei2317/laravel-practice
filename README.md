@@ -37,3 +37,9 @@
 |Route::resource('/articles', 'App\Http\Controllers\ArticleController')->except(['index']);|まとめて設定(onlyも使える)|
 
 ### Eloquent ORM
+## メモ
+- middlewareっていうのがある
+  - Railsのコントローラーのフィルタ(before_action等)の役割をしそう
+- バリデーションをモデルに書かない
+- ポリシーっていうのがある
+  - ユーザーがリソースに対して出来ることを制限する
