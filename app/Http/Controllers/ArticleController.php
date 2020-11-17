@@ -34,4 +34,11 @@ class ArticleController extends Controller
     {
         return view('articles.edit', ['article' => $article]);
     }
+
+    public function update(ArticleRequest $request, Article $article)
+    {
+        // eval(\Psy\sh());
+        $article->fill($request->all())->save();
+        return redirect()->route('articles.index');
+    }
 }
