@@ -18,6 +18,6 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('articles.index', ['articles' => Article::all()]);
+        return view('articles.create');
     }
 }
