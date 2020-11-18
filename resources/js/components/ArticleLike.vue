@@ -3,7 +3,10 @@
     <button type="button" class="btn m-0 p-1 shadow-none">
       <i
         class="fas fa-heart mr-1"
-        v-bind:class="{ 'red-text': this.isLikedBy }"
+        v-bind:class="{
+          'red-text': this.isLikedBy,
+          'animeted heartBeat fast': this.gotToLike,
+        }"
         @click="clickLike"
       />
     </button>
@@ -34,6 +37,7 @@ export default {
     return {
       isLikedBy: this.initialIsLikedBy,
       countLikes: this.initialCountLikes,
+      gotToLike: false,
     };
   },
   methods: {
@@ -48,11 +52,13 @@ export default {
       const response = await axios.put(this.endpoint);
       this.isLikedBy = true;
       this.countLikes = response.data.countLikes;
+      this.gotToLike = true;
     },
     async unlike() {
       const response = await axios.delete(this.endpoint);
       this.isLikedBy = false;
       this.countLikes = response.data.countLikes;
+      this.gotToLike = false;
     },
   },
 };
